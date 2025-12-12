@@ -66,4 +66,4 @@ INSERT INTO users (name, email, password, role, department_id, phone) VALUES
 
 -- Insert sample employee (password: employee123)
 INSERT INTO users (name, email, password, role, department_id, phone) VALUES
-('John Doe', 'john@attendance.com', '$2y$10$vZ9z5OZ9Z5OZ9Z5OZ9Z5Ou.F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5', 'employee', 2, '081234567891');
+('John Doe', 'john@attendance.com', '$2y$10$xm1zXYSuFSgdK8J1Bavdc.HUAGt2z6nJkNexNd/ZyzLSj5E5EnJ1.', 'employee', 2, '081234567891');

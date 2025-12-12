@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clock_in'])) {
         setFlashMessage('danger', 'Foto selfie wajib diambil');
     } elseif (empty($location)) {
         setFlashMessage('danger', 'Lokasi tidak terdeteksi');
+    } elseif (!preg_match('/^data:image\/(jpeg|jpg|png);base64,/', $photo)) {
+        setFlashMessage('danger', 'Format foto tidak valid');
     } else {
         // Save photo
         $photo_data = str_replace('data:image/jpeg;base64,', '', $photo);
@@ -36,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clock_in'])) {
         $photo_path = __DIR__ . '/../uploads/selfies/' . $photo_name;
         
         if (!file_exists(__DIR__ . '/../uploads/selfies/')) {
-            mkdir(__DIR__ . '/../uploads/selfies/', 0777, true);
+            mkdir(__DIR__ . '/../uploads/selfies/', 0755, true);
         }
         
         file_put_contents($photo_path, $photo_decoded);
@@ -71,6 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clock_out'])) {
         setFlashMessage('danger', 'Foto selfie wajib diambil');
     } elseif (empty($location)) {
         setFlashMessage('danger', 'Lokasi tidak terdeteksi');
+    } elseif (!preg_match('/^data:image\/(jpeg|jpg|png);base64,/', $photo)) {
+        setFlashMessage('danger', 'Format foto tidak valid');
     } else {
         // Save photo
         $photo_data = str_replace('data:image/jpeg;base64,', '', $photo);

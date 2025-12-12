@@ -162,11 +162,6 @@ $absent_count = count(array_filter($records, fn($r) => $r['status'] === 'absent'
         }
     </style>
     <script>
-        window.onload = function() {
-            // Auto print on load
-            // window.print();
-        }
-        
         function printPDF() {
             window.print();
         }
