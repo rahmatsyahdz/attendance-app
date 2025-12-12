@@ -1,0 +1,36 @@
+# Uploads
+uploads/selfies/*.jpg
+uploads/selfies/*.jpeg
+uploads/selfies/*.png
+
+# Exports
+exports/*.pdf
+exports/*.xls
+exports/*.xlsx
+exports/*.csv
+
+# Keep directory structure
+!uploads/selfies/.gitkeep
+!exports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Config (if contains sensitive data)
+# config/database.php
+
+# Temporary files
+tmp/
+temp/
+*.tmp
