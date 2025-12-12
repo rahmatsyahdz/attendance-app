@@ -1,0 +1,301 @@
+/* Custom Styles for Attendance App */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    flex: 1;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 450px;
+    margin: 50px auto;
+}
+
+.login-card {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    background: linear-gradient(135deg, var(--primary-color), #0a58ca);
+    color: white;
+    padding: 30px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.login-header i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Dashboard Cards */
+.stat-card {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card .icon {
+    font-size: 3rem;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.stat-card p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+/* Camera Preview */
+#camera-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+#camera-preview {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+}
+
+#camera-canvas {
+    display: none;
+}
+
+.camera-controls {
+    margin-top: 15px;
+}
+
+/* Clock Button */
+.clock-btn {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.clock-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styles */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.badge-status-present {
+    background-color: var(--success-color);
+}
+
+.badge-status-late {
+    background-color: var(--warning-color);
+    color: #000;
+}
+
+.badge-status-absent {
+    background-color: var(--danger-color);
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+.profile-img-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Loading Spinner */
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading.show {
+    display: flex;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Card Shadow */
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+/* Form Styles */
+.form-control, .form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+    
+    .clock-btn {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Location Display */
+.location-display {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.location-display i {
+    color: var(--danger-color);
+}
+
+/* Attendance Status Colors */
+.status-present {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.status-late {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+.status-absent {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+/* Export Buttons */
+.export-buttons {
+    margin-bottom: 20px;
+}
+
+.export-buttons .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Photo Preview */
+.photo-preview {
+    max-width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.photo-preview:hover {
+    transform: scale(1.05);
+}
